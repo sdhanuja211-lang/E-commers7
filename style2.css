@@ -1,0 +1,533 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.watch-slider{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ================= SLIDE BASE ================= */
+
+.watch-slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    opacity:0;
+    animation:slideShow 12s infinite;
+}
+
+/* Background + Delay */
+
+.s1{background:#111; animation-delay:0s;}
+.s2{background:#0c3c60; animation-delay:6s;}
+
+/* ================= LEFT ================= */
+
+.watch-left{
+    width:50%;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.watch-left p{
+    letter-spacing:3px;
+    font-size:20px;
+    opacity:0;
+    transform:translateY(40px);
+    animation:textUp .8s forwards;
+    animation-delay:.5s;
+}
+
+.watch-left h1{
+    font-size:65px;
+    font-weight:800;
+    line-height:1.1;
+    opacity:0;
+    transform:translateY(60px);
+    animation:textUp 1s forwards;
+    animation-delay:.8s;
+}
+
+.price{
+    font-size:22px;
+    opacity:0;
+    transform:translateY(40px);
+    animation:textUp 1.2s forwards;
+    animation-delay:1s;
+}
+
+/* BUTTONS */
+
+.watch-btns{
+    display:flex;
+    gap:20px;
+    opacity:0;
+    animation:textUp 1.4s forwards;
+    animation-delay:1.2s;
+}
+
+.watch-btns button{
+    padding:12px 30px;
+    border:2px solid white;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    border-radius:30px;
+    transition:.4s;
+    font-size: 18px;
+    
+}
+
+.watch-btns button:hover{
+    background:#fa8837;
+    color:black;
+    transform:translateY(-5px);
+}
+
+/* ================= RIGHT ================= */
+.watch-btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ff7a00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.watch-btn:hover{
+    background: #0d2f8b;
+}
+.watch-right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.watch-right img{
+    width:75%;
+    max-height:80vh;
+    object-fit:contain;
+    opacity:0;
+    transform:translateX(100px);
+    animation:imageIn 1.2s forwards;
+    animation-delay:.7s;
+}
+
+/* ================= SLIDE FADE ================= */
+
+@keyframes slideShow{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    45%{opacity:1;}
+    53%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/* TEXT ANIMATION */
+
+@keyframes textUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* IMAGE ANIMATION */
+
+@keyframes imageIn{
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .watch-slide{
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+    }
+
+    .watch-left,
+    .watch-right{
+        width:100%;
+    }
+
+    .watch-left h1{
+        font-size:42px;
+    }
+
+    .watch-right img{
+        width:60%;
+        margin-top:30px;
+    }
+
+    .watch-btns{
+        justify-content:center;
+    }
+}
+
+@media(max-width:480px){
+
+    .watch-left h1{
+        font-size:30px;
+    }
+
+    .watch-right img{
+        width:80%;
+    }
+
+    .watch-btns{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .watch-btns button{
+        width:100%;
+    }
+}
+
+
+
+
+
+
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section only styling */
+.deal-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.deal-section .container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.section-header span {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #777;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 50px;
+  text-transform: uppercase;
+  /* margin-bottom: 10px; */
+}
+
+.section-header p {
+  max-width: 600px;
+  margin: auto;
+  color: #777;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+/* Swiper */
+.mySwiper {
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circle */
+.circle {
+  width: 200px;
+  height: 200px;
+  background: #ececec;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.circle img {
+  width: 120px;
+  transition: 0.3s;
+}
+
+.circle:hover img {
+  transform: scale(1.1);
+}
+
+.watch-name {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .circle {
+    width: 160px;
+    height: 160px;
+  }
+  .circle img {
+    width: 100px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Scoped completely — won't touch other sections */
+
+.deal-countdown-safe {
+  padding: 80px 0;
+  background: #f7f7f7;
+}
+
+.deal-countdown-safe .deal-inner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* LEFT */
+.deal-countdown-safe .deal-left {
+  width: 50%;
+  float: left;
+}
+
+.deal-countdown-safe .deal-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* RIGHT */
+.deal-countdown-safe .deal-right {
+  width: 50%;
+  float: left;
+  padding: 60px;
+  margin-top: 50px;
+}
+
+.deal-countdown-safe .deal-small {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #777;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.deal-countdown-safe .deal-heading {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.deal-countdown-safe .deal-text {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* TIMER */
+.deal-countdown-safe .deal-timer {
+  margin-bottom: 30px;
+}
+
+.deal-countdown-safe .deal-box {
+  display: inline-block;
+  margin-right: 25px;
+  text-align: center;
+}
+
+.deal-countdown-safe .deal-box div {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.deal-countdown-safe .deal-box span {
+  font-size: 18px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+/* BUTTON */
+.deal-countdown-safe .deal-button {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid #fa8837;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  transition: 0.3s;
+  background-color: #fa8837;
+}
+
+.deal-countdown-safe .deal-button:hover {
+  background:#8ab2d6;
+  color: #fff;
+}
+
+/* CLEAR FLOAT */
+.deal-countdown-safe .deal-inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .deal-countdown-safe .deal-left,
+  .deal-countdown-safe .deal-right {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .deal-countdown-safe .deal-heading {
+    font-size: 28px;
+  }
+
+  .deal-countdown-safe .deal-box div {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+
+
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 80px 6%;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.feature-box {
+  padding: 40px 25px;
+  background: #fff;
+  border-radius: 14px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.feature-box .icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  transition: all 0.35s ease;
+}
+
+.feature-box h3 {
+  font-size: 28px;   /* Increased */
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #222;
+}
+.feature-box>.icon{
+    height: 50px;
+  width: 50px;
+}
+.feature-box p {
+  font-size: 19px;   /* Increased */
+  color: #666;
+  line-height: 1.7;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* Hover – Only Lift + Orange (No Shadow) */
+.feature-box:hover {
+  transform: translateY(-6px);
+
+}
+
+.feature-box:hover .icon {
+  background: #ffe8d8;
+  color: #ff7a00;
+  
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .features {
+    grid-template-columns: 1fr;
+    padding: 60px 8%;
+  }
+
+  .feature-box {
+    padding: 35px 20px;
+  }
+
+  .feature-box h3 {
+    font-size: 20px;
+  }
+
+  .feature-box p {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
